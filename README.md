@@ -9,6 +9,9 @@
 
 ## 2.1. Requiered
 
+```bash
+
   composer require --dev orm-fixtures
   composer require symfony/asset
+```
 
