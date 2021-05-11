@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Album
+{% endblock %}
+
+{% block body %}
+
+	<div class="py-5">
+		<div class="container">
+			<h1 class="text-light">{{ album.nom }}
+				by
+				{{ album.artiste.prenom }}
+				{{ album.artiste.nom }}</h1>
+
+
+			<a class="badge badge-dark" href="{{ path('album_index') }}">Retour à la collection</a>
+			<a class="badge badge-info" href="{{ path('album_new') }}">Ajouter un album</a>
+			<a class="badge badge-light" href="{{ path('album_edit', {'id': album.id}) }}">Modifier cet album</a>
+
+
+			<div class="row justify-content-center">
+				<div class="col-10 my-3 ">
+					<div class="card bg-light p-2 text-center ">
+						<span>
+							<img class="w-50 rounded my-2" src="{{ asset ('img/' ~ album.pochette ~ '.jpg' ) }}" alt="">
+						</span>
+
+						<p>{{ album.presentation }}</p>
+						<blockquote class="blockquote-footer">
+							{{ album.genre }}
+							{{ album.annee ? album.annee|date('Y-m-d') : '' }}
+						</blockquote>
+
+
+					</div>
+				</div>
+			</div>
+			{{ include('album/_delete_form.html.twig') }}
+		</div>
+	</div>
+
+
+{% endblock %}

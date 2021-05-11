@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Album
+{% endblock %}
+
+{% block body %}
+	<div class="container text-light">
+
+		<h1 class="text-light">Ajouter un album à la Collection</h1>
+
+		{{ include('album/_form.html.twig') }}
+
+		<a class="badge badge-dark" href="{{ path('album_index') }}">Retour à la collection</a>
+	</div>
+{% endblock %}

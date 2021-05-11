@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Album Collection
+{% endblock %}
+
+{% block body %}
+	<div class="py-5">
+		<div class="container">
+			<h1 class="text-light">Album Collection</h1>
+			<a class="badge badge-info" href="{{ path('album_new') }}">Ajouter un album</a>
+			<div class="row">
+
+				{% for album in albums %}
+					<div class="col-3 my-3 ">
+						<div class="card bg-light p-2 text-center ">
+							<h3>{{ album.artiste.prenom }}
+								{{ album.artiste.nom }}</h3>
+							<h4>{{ album.nom }}</h4>
+							<span>
+								<img class="w-75 rounded my-2" src="{{ asset ('img/' ~ album.pochette ~ '.jpg' ) }}" alt="">
+							</span>
+
+							<p>{{ album.presentation }}</p>
+							<blockquote class="blockquote-footer">
+								{{ album.genre }}
+							{{ album.annee ? album.annee|date('Y-m-d') : '' }}
+							</blockquote>
+
+
+							<a class="badge badge-secondary" href="{{ path('album_show', {'id': album.id}) }}">show</a>
+							<a class="badge badge-light" href="{{ path('album_edit', {'id': album.id}) }}">edit</a>
+
+						</div>
+					</div>
+					{% else %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

@@ -76,4 +76,8 @@ la commande `composer require --dev orm-fixtures` n'est plus nécessaire depuis 
 
 ### Alimentation des Fixtures
 
-# OrianCrosPartiel
+
+Création du Crud Album
+
+import de form_themes: ['bootstrap_4_layout.html.twig']
+composer require symfony/asset
