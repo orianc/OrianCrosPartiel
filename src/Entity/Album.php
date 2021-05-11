@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
 
-use App\Repository\AlbumRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AlbumRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 
@@ -35,8 +35,6 @@ class Album
     private $pochette;
 
     /**
-     * @Assert\NotBlank(message="Ce champ ne peut pas être vide !")
-
      * @ORM\Column(type="date")
      */
     private $annee;

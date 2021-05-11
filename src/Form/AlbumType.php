@@ -29,8 +29,11 @@ class AlbumType extends AbstractType
             ])
             ->add('pochette')
             ->add('annee', DateType::class, [
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',])
+                'widget' => 'choice',
+                'empty_data' => '',
+             
+
+                ])
             ->add('genre')
             ->add('presentation', TextareaType::class,
             [
